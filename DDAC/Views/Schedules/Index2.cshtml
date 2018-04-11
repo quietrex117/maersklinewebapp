@@ -1,0 +1,682 @@
+﻿
+@{
+	Layout = null;
+}
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+	<title>HomePage : Maersk Line Application</title>
+
+	<!--meta tags -->
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<script type="application/x-javascript">
+		addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
+		function hideURLbar(){ window.scrollTo(0,1); }
+	</script>
+	<!--//meta tags ends here-->
+	<!--booststrap-->
+
+	<link href="~/guide/css/bootstrap.css" rel="stylesheet" type="text/css" media="all">
+	<!--//booststrap end-->
+	<!-- font-awesome icons -->
+	<link href="~/guide/css/font-awesome.css" rel="stylesheet" >
+	<!-- //font-awesome icons -->
+	<!-- gallery-Swipe-box -->
+	<link rel="stylesheet" href="~/guide/css/swipebox.css">
+	<!-- //gallery-Swipe-box -->
+	<!-- flexSlider -->
+	<link rel="stylesheet" href="~/guide/css/flexslider.css" type="text/css" media="screen" property="" />
+	<!-- //flexSlider -->
+	<!--stylesheets-->
+	<link href="~/guide/css/attrac.css" rel="stylesheet" type="text/css" media="all" />
+	<link href="~/guide/css/style.css" rel='stylesheet' type='text/css' media="all">
+	<!--//stylesheets-->
+	<link href="//fonts.googleapis.com/css?family=Saira+Condensed:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+	<link href="//fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
+
+</head>
+
+<body>
+	<div class="banner" id="home">
+
+		<div class="header-w3layouts">
+			<!-- Navigation -->
+
+			<div class="container">
+				<div class="header-bar">
+					<nav class="navbar navbar-default">
+						<div class="navbar-header navbar-left">
+							<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+								<span class="sr-only">Toggle navigation</span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+							</button>
+							<h1><a class="navbar-brand" href="~/Views/Schedules/Index2">Maersk</a></h1>
+						</div>
+						<!-- Collect the nav links, forms, and other content for toggling -->
+						<div class="collapse navbar-collapse navbar-right" id="bs-example-navbar-collapse-1">
+							<nav>
+								<ul class="nav navbar-nav">
+									<li>@Html.ActionLink("Home", "Index2", "Schedules", null, new { @class = "active" })</li>
+									<li><a href="#about" class="scroll">About</a></li>
+									<li><a href="#services" class="scroll">Services</a></li>
+									<li><a href="#gallery" class="scroll">Gallery</a></li>
+									<li><a href="#team" class="scroll">Team</a></li>
+									<li><a href="#newsletter" class="scroll">Newsletter</a></li>
+									
+									<li>@Html.ActionLink("Login", "Login", "User", null, new { @class = "navbar-brand" })</li>
+								</ul>
+							</nav>
+
+						</div>
+					</nav>
+				</div>
+
+				<div class="clearfix"> </div>
+
+			</div>
+
+		</div>
+		<div class="container">
+
+			<!--Slider-->
+			<div class="slider">
+				<div class="callbacks_container w3l">
+					<ul class="rslides" id="slider">
+						<li>
+
+							<div class="slider-info">
+								<h4>SEND US YOUR CARGO!!</h4>
+								<p>Be Ready To Ship Your Cargo</p>
+
+							</div>
+						</li>
+						<li>
+
+							<div class="slider-info">
+								<h4>BEST SHIPPING EXPERIENCE!!</h4>
+								<p>Be Ready To Ship Your Cargo</p>
+							</div>
+						</li>
+					</ul>
+
+				</div>
+				<div class="clearfix"></div>
+
+			</div>
+
+		</div>
+	</div>
+	<!--//banner-->
+	<div class="w3-about-us" id="about">
+		<div class="container">
+			<div class="w3-headings-all">
+				<h3>Welcome</h3>
+			</div>
+			<div class="w3-about-text">
+				<p>Maersk Line is the global coontainer division and the largest opearting unit of the A.P.Moller - Maersk Group, a Danish
+					business conglomerate.  It is the world's largest container shipping company having customers through 374 offices in 116 countries.  It employs approximately
+					7000 sea farers and approximately 25,000 land-based people.  Maersk Line operates over 600 vessesls and has a capacity of 2.6 million TEU.  The company was founded in 1928.</p>
+			</div>
+			<div class="w3-about-all-grid">
+				<div class="col-md-6 w3-about-grid-left">
+					<ul>
+						<li><h3><span><i class="fa fa-arrow-circle-o-right" aria-hidden="true"></i></span>Shipping Technology</h3></li>
+						<li><h3><span><i class="fa fa-arrow-circle-o-right" aria-hidden="true"></i></span>Logistics package</h3></li>
+						<li><h3><span><i class="fa fa-arrow-circle-o-right" aria-hidden="true"></i></span>Transportation</h3></li>
+						<li><h3><span><i class="fa fa-arrow-circle-o-right" aria-hidden="true"></i></span>Attraction Experience</h3></li>
+					</ul>
+				</div>
+				<div class="col-md-6 w3-about-grid-right">
+					<ul>
+						<li><h3><span><i class="fa fa-arrow-circle-o-right" aria-hidden="true"></i></span>Expensive less</h3></li>
+						<li><h3><span><i class="fa fa-arrow-circle-o-right" aria-hidden="true"></i></span>Efficiency</h3></li>
+						<li><h3><span><i class="fa fa-arrow-circle-o-right" aria-hidden="true"></i></span>Online Shipping</h3></li>
+						<li><h3><span><i class="fa fa-arrow-circle-o-right" aria-hidden="true"></i></span>Extraordinary Shipment</h3></li>
+					</ul>
+				</div>
+				<div class="clearfix"></div>
+
+			</div>
+		</div>
+	</div>
+	<!-- what -->
+	<div class="what-w3ls" id="services">
+		<div class="container">
+			<div class="w3-headings-all">
+				<h3>Our Services</h3>
+			</div>
+			<p class="w3agile">
+				Maersk Line operates in 100 countries by handling all the cargo and transporting it around the globe.
+			</p>
+			<div class="what-grids">
+				<div class="col-md-6 what-grid">
+					<div class="what-agile-info">
+						<h4>Location</h4>
+						<p>Delivering around the globe, which country partners are Malaysia, Singaporer, Indonesia, China, England, India, and etc</p>
+					</div>
+					<img src="~/guide/images/sssa2.jpg" class="img-responsive" alt="" />
+				</div>
+				<div class="col-md-6 what-grid1">
+					<div class="what-top">
+						<div class="what-left">
+							<i class="glyphicon glyphicon-tree-deciduous" aria-hidden="true"></i>
+						</div>
+						<div class="what-right">
+							<h4>Operating</h4>
+							<p>Best life experience in delivering goods around the globe at 24/7 and variety of attractive pricing chosen.</p>
+						</div>
+						<div class="clearfix"></div>
+					</div>
+					<div class="what-top1">
+						<div class="what-left">
+							<i class="glyphicon glyphicon-flash" aria-hidden="true"></i>
+						</div>
+						<div class="what-right">
+							<h4>Company</h4>
+							<p>Largest operating unit of the A.P.Moller - Maersk Group, a Danish business conglomerate.  Transporting through 7000 sea farers available 25,000 land-based people.</p>
+						</div>
+						<div class="clearfix"></div>
+					</div>
+					<div class="what-top1">
+						<div class="what-left">
+							<i class="glyphicon glyphicon-fire" aria-hidden="true"></i>
+						</div>
+						<div class="what-right">
+							<h4>Cargo</h4>
+							<p>Goods - Vegetables, Fruits, Furniture, PC/Laptop, Clothing, Books, Crack, Heavy object, and etc</p>
+						</div>
+						<div class="clearfix"></div>
+					</div>
+				</div>
+				<div class="clearfix"></div>
+			</div>
+			<div class="about-info-grids">
+				<div class="col-md-4 col-sm-4 about-info about-info1">
+					<i class="fa fa-info-circle agile-sicon" aria-hidden="true"></i>
+					<h4>how we<span class="head-w3l"> work</span></h4>
+					<div class="h4-underline"></div>
+					<p>Receive the cargo, Handling the cargo and Transport the cargo around the globe.</p>
+				</div>
+				<div class="col-md-4 col-sm-4 about-info about-info2">
+					<i class="fa fa-question-circle agile-sicon" aria-hidden="true"></i>
+					<h4>what we <span class="head-w3l"> do</span></h4>
+					<div class="h4-underline"></div>
+					<p>Receive the cargo, Handling the cargo and Transport the cargo around the globe.</p>
+				</div>
+				<div class="col-md-4 col-sm-4 about-info about-info3">
+					<i class="fa fa-registered agile-sicon" aria-hidden="true"></i>
+					<h4>why choose<span class="head-w3l"> us</span></h4>
+					<div class="h4-underline"></div>
+					<p>Receive the cargo, Handling the cargo and Transport the cargo around the globe.</p>
+				</div>
+				<div class="clearfix"></div>
+			</div>
+		</div>
+	</div>
+	<!-- //what -->
+	<!-- pricing -->
+	<div class="pricing-agile" id="pricing-agile">
+		<div class="container">
+			<div class="w3-headings-all w3-services-head">
+				<h3>Our Pricings</h3>
+			</div>
+
+			<div class="pricing-agile-grids">
+				<div class="col-xs-4 grid-info">
+					<h3>NORMAL PACK</h3>
+					<h4>
+						$9.99
+						<sup>*</sup>
+					</h4>
+					<div class="pricing-agile-text">
+						<p>Transportation</p>
+						<p>Warehousing</p>
+						<p>Package Weightage</p>
+						<p>Limited to 10kg</p>
+					</div>
+					<a href="#regi" class="scroll">Choose Plan</a>
+				</div>
+				<div class="col-xs-4 grid-info grid-two">
+					<h3>PREMIUM</h3>
+					<h4>
+						$18.99
+						<sup>*</sup>
+					</h4>
+					<div class="pricing-agile-text">
+						<p>Free routing service</p>
+						<p>Container Yard</p>
+						<p>Air and Sea Shipment</p>
+						<p>Limited to 20kg</p>
+					</div>
+					<a href="#regi" class="scroll">Choose Plan</a>
+				</div>
+				<div class="col-xs-4 grid-info grid-three">
+					<h3>LUXURY</h3>
+					<h4>
+						$29.99
+						<sup>*</sup>
+					</h4>
+					<div class="pricing-agile-text">
+						<p>Free Store Door Service</p>
+						<p>Free Cargo handling</p>
+						<p>Free shipment</p>
+						<p>Unlimited Weightage</p>
+					</div>
+					<a href="#regi" class="scroll">Choose Plan</a>
+				</div>
+				<div class="clearfix"> </div>
+			</div>
+		</div>
+	</div>
+	<!-- //pricing table -->
+	<!-- team -->
+	<div class="w3-team banner-bottom " id="team">
+		<div class="container">
+			<div class="w3-headings-all">
+				<h3>Our team</h3>
+			</div>
+			<div class="w3ls_banner_bottom_grids">
+				<div class="col-md-3 w3_agile_team_grid">
+					<div class="w3layouts_team_grid">
+						<img src="~/guide/images/t1.jpg" alt=" " class="img-responsive" />
+						<div class="w3layouts_team_grid_pos">
+							<div class="wthree_text">
+								<ul class="agileits_social_list">
+									<li><a href="#" class="w3_agile_facebook"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+									<li><a href="#" class="agile_twitter"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+									<li><a href="#" class="w3_agile_dribble"><i class="fa fa-dribbble" aria-hidden="true"></i></a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<h4>Ackerley Head</h4>
+					<p>Logistic Manager</p>
+				</div>
+				<div class="col-md-3 w3_agile_team_grid">
+					<div class="w3layouts_team_grid">
+						<img src="~/guide/images/t2.jpg" alt=" " class="img-responsive" />
+						<div class="w3layouts_team_grid_pos">
+							<div class="wthree_text">
+								<ul class="agileits_social_list">
+									<li><a href="#" class="w3_agile_facebook"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+									<li><a href="#" class="agile_twitter"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+									<li><a href="#" class="w3_agile_dribble"><i class="fa fa-dribbble" aria-hidden="true"></i></a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<h4>Acton Rich</h4>
+					<p>Program Planner</p>
+				</div>
+				<div class="col-md-3 w3_agile_team_grid">
+					<div class="w3layouts_team_grid">
+						<img src="~/guide/images/t3.jpg" alt=" " class="img-responsive" />
+						<div class="w3layouts_team_grid_pos">
+							<div class="wthree_text">
+								<ul class="agileits_social_list">
+									<li><a href="#" class="w3_agile_facebook"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+									<li><a href="#" class="agile_twitter"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+									<li><a href="#" class="w3_agile_dribble"><i class="fa fa-dribbble" aria-hidden="true"></i></a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<h4>Hackett Eric</h4>
+					<p>Shipment Manager</p>
+				</div>
+				<div class="col-md-3 w3_agile_team_grid">
+					<div class="w3layouts_team_grid">
+						<img src="~/guide/images/t4.jpg" alt=" " class="img-responsive" />
+						<div class="w3layouts_team_grid_pos">
+							<div class="wthree_text">
+								<ul class="agileits_social_list">
+									<li><a href="#" class="w3_agile_facebook"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+									<li><a href="#" class="agile_twitter"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+									<li><a href="#" class="w3_agile_dribble"><i class="fa fa-dribbble" aria-hidden="true"></i></a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<h4>Sabella Carl</h4>
+					<p>Firm Director</p>
+				</div>
+				<div class="clearfix"> </div>
+			</div>
+		</div>
+	</div>
+	<!-- //team -->
+	<!--Gallery -->
+	<div class="gallery" id="gallery">
+		<div class="container">
+			<div class="w3-headings-all">
+				<h3>Our Gallery</h3>
+			</div>
+			<div class="agileinfo_work_grids">
+				<div class="col-md-4 w3_agile_work_grid gallery1">
+					<div class="wthree_work_grid1">
+						<a href="~/guide/asd/ship-importing-goods.jpg" class="b-link-stripe b-animate-go  swipebox" title="Maersk Line">
+							<div class="agile_work_grid w3_agileits_sub_work">
+								<img src="~/guide/asd/ship-importing-goods.jpg" alt=" " class="img-responsive" />
+								<div class="agileits_w3layouts_work">
+									Maersk Line
+								</div>
+							</div>
+						</a>
+					</div>
+					<div class="wthree_work_grid1">
+						<a href="~/guide/asd/778760.jpg" class="b-link-stripe b-animate-go  swipebox" title="Maersk Line">
+							<div class="agile_work_grid w3_agileits_sub_work">
+								<img src="~/guide/asd/778760.jpg" alt=" " class="img-responsive" />
+								<div class="agileits_w3layouts_work">
+									Maersk Line
+								</div>
+							</div>
+						</a>
+					</div>
+					<div class="wthree_work_grid1">
+						<a href="~/guide/asd/9032696-large.jpg" class="b-link-stripe b-animate-go  swipebox" title="Maersk Line">
+							<div class="agile_work_grid w3_agileits_sub_work">
+								<img src="~/guide/asd/9032696-large.jpg" alt=" " class="img-responsive" />
+								<div class="agileits_w3layouts_work">
+									Maersk Line
+								</div>
+							</div>
+						</a>
+					</div>
+				</div>
+				<div class="col-md-4 w3_agile_work_grid">
+					<div class="wthree_work_grid1">
+						<a href="~/guide/asd/air_freight_forwarding.jpg" class="b-link-stripe b-animate-go  swipebox" title="Maersk Line">
+							<div class="agile_work_grid w3_agileits_sub_work">
+								<img src="~/guide/asd/air_freight_forwarding.jpg" alt=" " class="img-responsive" />
+								<div class="agileits_w3layouts_work">
+									Maersk Line
+								</div>
+							</div>
+						</a>
+					</div>
+					<div class="wthree_work_grid1">
+						<a href="~/guide/asd/Cargo-Plane-1.jpg" class="b-link-stripe b-animate-go  swipebox" title="Maersk Line">
+							<div class="agile_work_grid w3_agileits_sub_work">
+								<img src="~/guide/asd/Cargo-Plane-1.jpg" alt=" " class="img-responsive" />
+								<div class="agileits_w3layouts_work">
+									Maersk Line
+								</div>
+							</div>
+						</a>
+					</div>
+					<div class="wthree_work_grid1">
+						<a href="~/guide/asd/sea-freight-cargo-services-duba12.png" class="b-link-stripe b-animate-go  swipebox" title="Maersk Line">
+							<div class="agile_work_grid w3_agileits_sub_work">
+								<img src="~/guide/asd/sea-freight-cargo-services-duba12.png" alt=" " class="img-responsive" />
+								<div class="agileits_w3layouts_work">
+									Maersk Line
+								</div>
+							</div>
+						</a>
+					</div>
+				</div>
+				<div class="col-md-4 w3_agile_work_grid">
+					<div class="wthree_work_grid1">
+						<a href="~/guide/asd/ocean-freight.jpg" class="b-link-stripe b-animate-go  swipebox" title="Maersk Line">
+							<div class="agile_work_grid w3_agileits_sub_work">
+								<img src="~/guide/asd/ocean-freight.jpg" alt=" " class="img-responsive" />
+								<div class="agileits_w3layouts_work">
+									Maersk Line
+								</div>
+							</div>
+						</a>
+					</div>
+					<div class="wthree_work_grid1">
+						<a href="~/guide/asd/cargo.jpg" class="b-link-stripe b-animate-go  swipebox" title="Maersk Line">
+							<div class="agile_work_grid w3_agileits_sub_work">
+								<img src="~/guide/asd/cargo.jpg" alt=" " class="img-responsive" />
+								<div class="agileits_w3layouts_work">
+									Maersk Line
+								</div>
+							</div>
+						</a>
+					</div>
+					<div class="wthree_work_grid1">
+						<a href="~/guide/asd/ship-ocean-containers.jpg" class="b-link-stripe b-animate-go  swipebox" title="Maersk Line">
+							<div class="agile_work_grid w3_agileits_sub_work">
+								<img src="~/guide/asd/ship-ocean-containers.jpg" alt=" " class="img-responsive" />
+								<div class="agileits_w3layouts_work">
+									Maersk Line
+								</div>
+							</div>
+						</a>
+					</div>
+				</div>
+				<div class="clearfix"> </div>
+			</div>
+		</div>
+	</div>
+
+	<!-- //Gallery -->
+	<!-- testimonials -->
+	<div class="testimonials" id="testimonials">
+		<div class="container">
+			<div class="w3-headings-all">
+				<h3>Our Customer says</h3>
+			</div>
+			<div class="w3_testimonials_grids">
+				<section class="slider">
+					<div class="flexslider">
+						<ul class="slides">
+							<li>
+								<div class="w3_testimonials_grid">
+									<img src="~/guide/asd/jamer_hunt_profile.jpg" alt=" " class="img-responsive" />
+									<h4>
+										<i>
+											A responsive logistics team works quickly and efficiently to put a cargo transportation project in place,
+											then helps troubleshoot and connect the dots for a logistics company launching.
+											Many hours of labor and problem solving at a very competitive life experience.
+											It is a real plus that Kuok Hong, the owner, is available, friendly, and patient!
+										</i>
+									</h4>
+									<h5>David Johnson</h5>
+									<p>Manager of CargoLogia Company</p>
+								</div>
+							</li>
+							<li>
+								<div class="w3_testimonials_grid">
+									<img src="~/guide/asd/jamer_hunt_profile.jpg" alt=" " class="img-responsive" />
+									<h4>
+										<i>
+											Maersk Line did a great job on our new site. 
+											I've worked with a lot of cargo shipment companies over the years, so I feel like I have a good perspective for evaluating shipment companies. 
+											Maersk Line is one of the best. 
+											I look for clear communication of process, adherence to the timelines and a great looking-end product. 
+											Maersk Line was great in all of these capacities. I will definitely come back to them.
+										</i>
+									</h4>
+									<h5>David Bryant</h5>
+									<p>Founder of Air-Logistic company</p>
+								</div>
+							</li>
+							<li>
+								<div class="w3_testimonials_grid">
+									<img src="~/guide/asd/jamer_hunt_profile.jpg" alt=" " class="img-responsive" />
+									<h4>
+										<i>
+											The best shipment/transportation group I have ever known. Period.”
+										</i>
+									</h4>
+									<h5>John Frank</h5>
+									<p>Founder</p>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</section>
+
+			</div>
+		</div>
+	</div>
+	<!-- //testimonials -->
+	<!-- contact form -->
+	<div id="newsletter">
+		<div class="subscribe">
+			<div class="container">
+				<div class=" col-md-6 agileits-title">
+					<h6>- Subscribe our</h6>
+					<h3>Newsletter</h3>
+				</div>
+				<div class=" col-md-6 agileits-title-right">
+					<form action="#" method="post">
+						<input type="email" name="email" placeholder="Enter your Email..." required="">
+						<input type="submit" value="Subscribe">
+					</form>
+					<div class="clearfix"> </div>
+				</div>
+			</div>
+		</div>
+	</div>
+		
+
+		
+
+		<!-- //contact form -->
+		<!-- footer -->
+		<div class="footer-agile">
+			<div class="container">
+				<div class="col-md-8 footer-nav">
+					<ul>
+						<li><a href="#home" class="scroll">Home</a></li>
+						<li><a href="#about" class="scroll">About</a></li>
+						<li><a href="#services" class="scroll">Services</a></li>
+						<li><a href="#team" class="scroll">Team</a></li>
+						<li><a href="#gallery" class="scroll">Gallery</a></li>
+						<li><a href="#newsletter" class="scroll">Newsletter</a></li>
+					</ul>
+				</div>
+				<div class="col-md-4 social">
+					<ul>
+						<li><a href="#"><i class="fa fa-facebook"></i></a></li>
+						<li><a href="#"><i class="fa fa-twitter"></i></a></li>
+						<li><a href="#"><i class="fa fa-pinterest"></i></a></li>
+						<li><a href="#"><i class="fa fa-dribbble"></i></a></li>
+						<li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+					</ul>
+				</div>
+				<div class="clearfix"> </div>
+				<div class="w3-footer-bottom">
+					<div class="col-md-4 mail-agileits-w3layouts">
+						<i class="glyphicon glyphicon-earphone" aria-hidden="true"></i>
+						<div class="contact-right">
+							<p>Phone</p><span>+60 (016)234-2345</span>
+						</div>
+					</div>
+					<div class="col-md-4 mail-agileits-w3layouts">
+						<i class="glyphicon glyphicon-envelope" aria-hidden="true"></i>
+						<div class="contact-right">
+							<p>Email</p><a href="mailto:info@example.com">info@example.com</a>
+						</div>
+					</div>
+					<div class="col-md-4 mail-agileits-w3layouts">
+						<i class="glyphicon glyphicon-map-marker" aria-hidden="true"></i>
+						<div class="contact-right">
+							<p>Address</p><span>Jalan Teknologi 5, Bukit Jalil, Kuala Lumpur, Malaysia</span>
+						</div>
+					</div>
+					<div class="clearfix"></div>
+				</div>
+
+			</div>
+		</div>
+		<!-- //footer -->
+		<!-- //footer -->
+		<div class="copy-right-grids">
+			<div class="container">
+				<div class="copy-left">
+					<p class="footer-gd">© 2018 Maersk Line . All Rights Reserved | Sponsor by <a href="https://www.apiit.edu.my/" target="_blank">APU</a></p>
+				</div>
+				<div class="clearfix"></div>
+			</div>
+		</div>
+
+
+
+		<!--js working-->
+		<script type="text/javascript" src="~/guide/js/jquery-2.2.3.min.js"></script>
+		<script src="~/guide/js/bootstrap.js"></script>
+		<!-- //js  working-->
+		<!-- banner-->
+		<script src="~/guide/js/responsiveslides.min.js"></script>
+		<script>
+			$(function () {
+				$("#slider").responsiveSlides({
+					auto: true,
+					pager: true,
+					nav: true,
+					speed: 1000,
+					namespace: "callbacks",
+					before: function () {
+						$('.events').append("<li>before event fired.</li>");
+					},
+					after: function () {
+						$('.events').append("<li>after event fired.</li>");
+					}
+				});
+			});
+		</script>
+		<!--// banner-->
+		<script defer src="~/guide/js/jquery.flexslider.js"></script>
+		<script type="text/javascript">
+			$(window).load(function () {
+				$('.flexslider').flexslider({
+					animation: "slide",
+					start: function (slider) {
+						$('body').removeClass('loading');
+					}
+				});
+			});
+		</script>
+		<!-- //flexSlider -->
+		<!-- script-for-swipebox -->
+		<script src="~/guide/js/jquery.swipebox.min.js"></script>
+		<script type="text/javascript">
+			jQuery(function ($) {
+				$(".swipebox").swipebox();
+			});
+		</script>
+		<!-- //script-for-swipebox -->
+		<!-- start-smoth-scrolling -->
+		<script type="text/javascript" src="~/guide/js/move-top.js"></script>
+		<script type="text/javascript" src="~/guide/js/easing.js"></script>
+		<script type="text/javascript">
+			jQuery(document).ready(function ($) {
+				$(".scroll").click(function (event) {
+					event.preventDefault();
+					$('html,body').animate({ scrollTop: $(this.hash).offset().top }, 1000);
+				});
+			});
+		</script>
+		<!-- start-smoth-scrolling -->
+		<!-- smooth scrolling-bottom-to-top -->
+		<script type="text/javascript">
+			$(document).ready(function () {
+				/*
+					var defaults = {
+					containerID: 'toTop', // fading element id
+					containerHoverID: 'toTopHover', // fading element hover id
+					scrollSpeed: 1200,
+					easingType: 'linear'
+					};
+				*/
+				$().UItoTop({ easingType: 'easeOutQuart' });
+			});
+		</script>
+		<a href="#" id="toTop" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
+		<script src="~/guide/js/SmoothScroll.min.js"></script>
+
+		<!-- //smooth scrolling-bottom-to-top -->
+
+</body>
+
+</html>

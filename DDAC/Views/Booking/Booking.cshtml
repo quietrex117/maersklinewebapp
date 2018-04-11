@@ -1,0 +1,114 @@
+﻿@model DDAC.Models.Booking
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+	<meta name="viewport" content="width=device-width" />
+	<title>Booking</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+	<link rel="stylesheet" href="https://cdn.datatables.net/1.10.13/css/jquery.dataTables.min.css" />
+	<link rel="stylesheet" href="~/Content/bootstrap.min.css" />
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+	<link href="~/Content/themes/base/jquery-ui.min.css" rel="stylesheet" />
+
+
+</head>
+<body>
+	<div style="width:90%; margin:0 auto" class="tablecontainer">
+		<a class="popup btn btn-primary" href="/booking/book/0" style="margin-bottom:20px; margin-top:20px;"><i class="fa fa-plus"></i> New Booking Details</a>
+		
+	</div>
+	<br /><br />
+
+	<script src="~/Scripts/jquery-3.3.1.min.js"></script>
+	<script src="~/Scripts/jquery.validate.min.js"></script>
+	<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+	<script src="https://cdn.datatables.net/1.10.13/js/jquery.dataTables.min.js"></script>
+	<script src="~/Scripts/jquery-ui-1.12.1.min.js"></script>
+
+	<script>
+		$(document).ready(function () {
+			var oTable = $('#myDatatable').DataTable({
+				"ajax": {
+					"url": '/user/GetVessels',
+					"type": "get",
+					"datatype": "json"
+				},
+				"columns": [
+					{ "data": "VesselName", "autoWidth": true },
+					{ "data": "Terminal", "autoWidth": true },
+					{ "data": "Country", "autoWidth": true },
+					{
+						"data": "VesselsId", "width": "50px", "render": function (data) {
+							return '<a class="popup btn btn-default" href="/user/save/' + data + '"><i class="fa fa-edit"></i> Edit</a>';
+						}
+					},
+					{
+						"data": "VesselsId", "width": "50px", "render": function (data) {
+							return '<a class="popup btn btn-danger" href="/user/delete/' + data + '"><i class="fa fa-trash"></i> Delete</a>';
+						}
+					}
+				]
+			})
+			$('.tablecontainer').on('click', 'a.popup', function (e) {
+				e.preventDefault();
+				OpenPopup($(this).attr('href'));
+			})
+			function OpenPopup(pageUrl) {
+				var $pageContent = $('<div/>');
+				$pageContent.load(pageUrl, function () {
+					$('#popupForm', $pageContent).removeData('validator');
+					$('#popupForm', $pageContent).removeData('unobtrusiveValidation');
+					$.validator.unobtrusive.parse('form');
+				});
+
+				$dialog = $('<div class="popupWindow" style="overflow:auto"></div>')
+					.html($pageContent)
+					.dialog({
+						draggable: false,
+						autoOpen: false,
+						resizable: false,
+						model: true,
+						title: 'Add/Edit Vessels',
+						height: 550,
+						width: 600,
+						close: function () {
+							$dialog.dialog('destroy').remove();
+						}
+					})
+
+				$('.popupWindow').on('submit', '#popupForm', function (e) {
+					var url = $('#popupForm')[0].action;
+					$.ajax({
+						type: "POST",
+						url: url,
+						data: $('#popupForm').serialize(),
+						success: function (data) {
+							if (data.status) {
+								$dialog.dialog('close');
+								oTable.ajax.reload();
+							}
+						}
+					})
+
+					e.preventDefault();
+				})
+				$dialog.dialog('open');
+			}
+		})
+	</script>
+</body>
+</html>

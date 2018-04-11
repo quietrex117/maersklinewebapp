@@ -1,0 +1,22 @@
+﻿@model DDAC.Models.Booking
+
+<h2>Booking Details</h2>
+
+@using (Html.BeginForm("book", "booking", FormMethod.Post, new { id = "popupForm" }))
+{
+	<div class="form-group">
+		<label>Cargo</label>
+		@Html.TextBoxFor(a => a.Cargo, new { @class = "form-control" })
+		@Html.ValidationMessageFor(a => a.Cargo)
+	</div>
+	<div class="form-group">
+		<label>Container Type</label>
+		@Html.TextBoxFor(a => a.ContainerType, new { @class = "form-control" })
+		@Html.ValidationMessageFor(a => a.ContainerType)
+	</div>
+
+	<div>
+		<input class="popup btn btn-primary" type="submit" value="Save" />
+	</div>
+
+}

@@ -1,0 +1,247 @@
+﻿@model IEnumerable<DDAC.Models.Schedule>
+
+Welcome @HttpContext.Current.User.Identity.Name
+
+<br />
+
+@if (Request.IsAuthenticated)
+{
+	using (Html.BeginForm("Logout", "User", FormMethod.Post, new { id = "logoutForm" }))
+	{
+
+		<a href="javascript:document.getElementById('logoutForm').submit()">Logout</a>
+	}
+}
+else
+{
+	using (Html.BeginForm("Login", "User", FormMethod.Post, new { id = "loginForm" }))
+	{
+		@Html.AntiForgeryToken()
+		<a href="javascript:document.getElementById('loginForm').submit()">Please login</a>
+	}
+}
+<!DOCTYPE html>
+
+<html>
+<head>
+	<meta name="viewport" content="width=device-width" />
+	<title>Index</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+	<link rel="stylesheet" href="https://cdn.datatables.net/1.10.13/css/jquery.dataTables.min.css" />
+	<link href='https://fonts.googleapis.com/css?family=Rock+Salt' rel='stylesheet' type='text/css'>
+
+	<!-- Latest compiled and minified CSS -->
+	<link href="~/guides3/css/style2.css" rel="stylesheet" type="text/css" media="all">
+	<link href="~/guides/css/style.css" rel="stylesheet" type="text/css" media="all">
+	<!-- Latest compiled and minified JavaScript -->
+
+	<link href="~/Content/themes/base/jquery-ui.min.css" rel="stylesheet" />
+
+	
+
+</head>
+<body>
+
+	<div class="contact-w3ls">
+		<div class="container">
+			<div class="agileits_heading_section">
+				<h3 class="wthree_head">Home</h3>
+				<p class="w3l_sub_para_agile">Search Shipment Availability</p>
+			</div>
+
+		</div>
+	</div>
+
+	
+	<p>
+
+		<br />
+		@using (Html.BeginForm("Index", "Schedules", FormMethod.Get))
+		{
+			<b>Search By:</b>
+			<text>From Location </text>@Html.TextBox("fromLocation")
+			<text>To Location </text>@Html.TextBox("toLocation")
+			<input type="submit" value="Search" class="popup btn btn-default" />
+		}
+
+	</p>
+	<br /><br />
+
+	<div style="width:90%; margin:0 auto" class="tablecontainer">
+		
+			<table class="myDatatable2">
+				<thead>
+					<tr>
+						<th>
+							@Html.DisplayNameFor(model => model.ShipmentDate)
+						</th>
+						<th>
+							@Html.DisplayNameFor(model => model.FromLocation)
+						</th>
+						<th>
+							@Html.DisplayNameFor(model => model.ToLocation)
+						</th>
+						<th>
+							@Html.DisplayNameFor(model => model.Rate)
+						</th>
+						<th>
+							@Html.DisplayNameFor(model => model.EarliestDeparture)
+						</th>
+						<th>
+							@Html.DisplayNameFor(model => model.Status)
+						</th>
+						<th>
+							@Html.DisplayNameFor(model => model.VesselsID)
+						</th>
+						<th></th>
+					</tr>
+					</thead>
+
+					@if (Model.Count() == 0)
+					{
+						<tr>
+							<td colspan="5">
+								No matching records found
+							</td>
+						</tr>
+					}
+					else
+					{
+						foreach (var item in Model)
+						{
+							<tbody>
+							<tr>
+								<td>
+									@Html.DisplayFor(modelItem => item.ShipmentDate)
+								</td>
+								<td>
+									@Html.DisplayFor(modelItem => item.FromLocation)
+								</td>
+								<td>
+									@Html.DisplayFor(modelItem => item.ToLocation)
+								</td>
+								<td>
+									@Html.DisplayFor(modelItem => item.Rate)
+								</td>
+								<td>
+									@Html.DisplayFor(modelItem => item.EarliestDeparture) (number of weeks)
+								</td>
+								<td>
+									@Html.DisplayFor(modelItem => item.Status)
+								</td>
+								<td>
+									@Html.DisplayFor(modelItem => item.VesselsID)
+								</td>
+								<td>
+									@Html.ActionLink("Details", "Details", new { id = item.ScheduleId }) |
+									@Html.ActionLink("Book", "Selection2", new { id = item.ScheduleId })
+								</td>
+							</tr>
+								</tbody>
+						}
+					}
+
+</table>
+
+			</div>
+
+	<div class="contact-w3ls">
+		<div class="container">
+			<div class="agileits_heading_section">
+				<p class="w3l_sub_para_agile">Vessels Available</p>
+			</div>
+		</div>
+	</div>
+	
+	<div style="width:90%; margin:0 auto" class="tablecontainer">
+		
+		<table id="myDatatable">
+			<thead>
+				<tr>
+					<th>ID</th>
+					<th>Vessels Name</th>
+					<th>Terminal</th>
+					<th>Country</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+		</table>
+	</div>
+	<br /><br />
+
+	<script src="~/Scripts/jquery-3.3.1.min.js"></script>
+	<script src="~/Scripts/jquery.validate.min.js"></script>
+	<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+	<script src="https://cdn.datatables.net/1.10.13/js/jquery.dataTables.min.js"></script>
+	<script src="~/Scripts/jquery-ui-1.12.1.min.js"></script>
+	<script>
+		$(document).ready(function () {
+			var oTable = $('#myDatatable').DataTable({
+				"ajax": {
+					"url": '/user/GetVessels',
+					"type": "get",
+					"datatype" : "json"
+				},
+				"columns": [
+					{ "data": "VesselsId", "autoWidth": true },
+					{"data": "VesselName", "autoWidth": true },
+					{"data": "Terminal", "autoWidth": true },
+					{"data" : "Country", "autoWidth": true },
+					{
+						"data": "VesselsId", "width": "50px", "render": function (data) {
+							return '<a class="popup btn btn-primary" href="/user/delete/' + data + '"><i class="fa fa-trash"></i> Details</a>';
+						}
+					}
+				]
+			})
+			$('.tablecontainer').on('click', 'a.popup', function (e) {
+				e.preventDefault();
+				OpenPopup($(this).attr('href'));
+			})
+			function OpenPopup(pageUrl) {
+				var $pageContent = $('<div/>');
+				$pageContent.load(pageUrl, function () {
+					$('#popupForm', $pageContent).removeData('validator');
+					$('#popupForm', $pageContent).removeData('unobtrusiveValidation');
+					$.validator.unobtrusive.parse('form');
+				});
+
+				$dialog = $('<div class="popupWindow" style="overflow:auto"></div>')
+					.html($pageContent)
+					.dialog({
+						draggable: false,
+						autoOpen: false,
+						resizable: false,
+						model: true,
+						title: 'Vessels Details',
+						height: 550,
+						width: 600,
+						close: function () {
+							$dialog.dialog('destroy').remove();
+						}
+					})
+
+				$('.popupWindow').on('submit', '#popupForm', function (e) {
+					var url = $('#popupForm')[0].action;
+					$.ajax({
+						type: "POST",
+						url: url,
+						data: $('#popupForm').serialize(),
+						success: function (data) {
+							if (data.status) {
+								$dialog.dialog('close');
+								oTable.ajax.reload();
+							}
+						}
+					})
+
+					e.preventDefault();
+				})
+				$dialog.dialog('open');
+			}
+		})
+	</script>
+	
+
+</body>
+</html>

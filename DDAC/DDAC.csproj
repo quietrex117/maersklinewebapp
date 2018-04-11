@@ -1,0 +1,724 @@
+﻿<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props')" />
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.7\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.7\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="..\packages\Microsoft.Net.Compilers.2.1.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.2.1.0\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{094571AA-C073-4B82-B10A-1DBCB4D5FAE8}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DDAC</RootNamespace>
+    <AssemblyName>DDAC</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <TypeScriptToolsVersion>2.3</TypeScriptToolsVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.7\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System.Web.Razor">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.3\lib\net45\System.Web.Webpages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages.Deployment">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.3\lib\net45\System.Web.Webpages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages.Razor">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.3\lib\net45\System.Web.Webpages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Helpers">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure">
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc">
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Data\DBDDAC.mdf" />
+    <Content Include="App_Data\DBDDAC_log.ldf">
+      <DependentUpon>DBDDAC.mdf</DependentUpon>
+    </Content>
+    <Content Include="Content\bootstrap-grid.css" />
+    <Content Include="Content\bootstrap-grid.min.css" />
+    <Content Include="Content\bootstrap-reboot.css" />
+    <Content Include="Content\bootstrap-reboot.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Content\themes\base\accordion.css" />
+    <Content Include="Content\themes\base\all.css" />
+    <Content Include="Content\themes\base\autocomplete.css" />
+    <Content Include="Content\themes\base\base.css" />
+    <Content Include="Content\themes\base\button.css" />
+    <Content Include="Content\themes\base\core.css" />
+    <Content Include="Content\themes\base\datepicker.css" />
+    <Content Include="Content\themes\base\dialog.css" />
+    <Content Include="Content\themes\base\draggable.css" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Content\themes\base\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_444444_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_555555_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_777620_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_777777_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_888888_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_cc0000_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="Content\themes\base\jquery-ui.css" />
+    <Content Include="Content\themes\base\jquery-ui.min.css" />
+    <Content Include="Content\themes\base\menu.css" />
+    <Content Include="Content\themes\base\progressbar.css" />
+    <Content Include="Content\themes\base\resizable.css" />
+    <Content Include="Content\themes\base\selectable.css" />
+    <Content Include="Content\themes\base\selectmenu.css" />
+    <Content Include="Content\themes\base\slider.css" />
+    <Content Include="Content\themes\base\sortable.css" />
+    <Content Include="Content\themes\base\spinner.css" />
+    <Content Include="Content\themes\base\tabs.css" />
+    <Content Include="Content\themes\base\theme.css" />
+    <Content Include="Content\themes\base\tooltip.css" />
+    <Content Include="Global.asax" />
+    <Content Include="Crypto.class" />
+    <Content Include="guides3\css\style.css" />
+    <Content Include="guides3\css\style2.css" />
+    <Content Include="guides3\images\banner.jpg" />
+    <Content Include="guides3\images\tick.png" />
+    <Content Include="guides3\index.html" />
+    <Content Include="guides3\js\index.js" />
+    <Content Include="guides3\js\jquery.min.js" />
+    <Content Include="guides3\w3layouts-License.txt" />
+    <Content Include="guides\about.html" />
+    <Content Include="guides\contact.html" />
+    <Content Include="guides\css\bootstrap.css" />
+    <Content Include="guides\css\font-awesome.css" />
+    <Content Include="guides\css\JiSlider.css" />
+    <Content Include="guides\css\style.css" />
+    <Content Include="guides\css\swipebox.css" />
+    <Content Include="guides\fonts\fontawesome-webfont.svg" />
+    <Content Include="guides\gallery.html" />
+    <Content Include="guides\icons.html" />
+    <Content Include="guides\images\2logstics2.jpg" />
+    <Content Include="guides\images\ab.jpg" />
+    <Content Include="guides\images\banner.jpg" />
+    <Content Include="guides\images\banner1.jpg" />
+    <Content Include="guides\images\banner2.jpg" />
+    <Content Include="guides\images\banner3.jpg" />
+    <Content Include="guides\images\g1.jpg" />
+    <Content Include="guides\images\g10.jpg" />
+    <Content Include="guides\images\g11.jpg" />
+    <Content Include="guides\images\g12.jpg" />
+    <Content Include="guides\images\g2.jpg" />
+    <Content Include="guides\images\g3.jpg" />
+    <Content Include="guides\images\g4.jpg" />
+    <Content Include="guides\images\g5.jpg" />
+    <Content Include="guides\images\g6.jpg" />
+    <Content Include="guides\images\g7.jpg" />
+    <Content Include="guides\images\g8.jpg" />
+    <Content Include="guides\images\g9.jpg" />
+    <Content Include="guides\images\icons.svg" />
+    <Content Include="guides\images\left-1.png" />
+    <Content Include="guides\images\left-quote.png" />
+    <Content Include="guides\images\left.png" />
+    <Content Include="guides\images\Logistics-PPT-Backgrounds.jpg" />
+    <Content Include="guides\images\overlay.png" />
+    <Content Include="guides\images\right-quote.png" />
+    <Content Include="guides\images\right.png" />
+    <Content Include="guides\images\t1.jpg" />
+    <Content Include="guides\images\t2.jpg" />
+    <Content Include="guides\images\t3.jpg" />
+    <Content Include="guides\images\t4.jpg" />
+    <Content Include="guides\images\te1.jpg" />
+    <Content Include="guides\images\te2.jpg" />
+    <Content Include="guides\images\te3.jpg" />
+    <Content Include="guides\images\up.png" />
+    <Content Include="guides\index.html" />
+    <Content Include="guides\js\bootstrap-3.1.1.min.js" />
+    <Content Include="guides\js\contact_me.js" />
+    <Content Include="guides\js\easing.js" />
+    <Content Include="guides\js\jarallax.js" />
+    <Content Include="guides\js\JiSlider.js" />
+    <Content Include="guides\js\jqBootstrapValidation.js" />
+    <Content Include="guides\js\jquery-2.1.4.min.js" />
+    <Content Include="guides\js\jquery.countup.js" />
+    <Content Include="guides\js\jquery.flexisel.js" />
+    <Content Include="guides\js\jquery.swipebox.min.js" />
+    <Content Include="guides\js\jquery.waypoints.min.js" />
+    <Content Include="guides\js\move-top.js" />
+    <Content Include="guides\js\SmoothScroll.min.js" />
+    <Content Include="guides\typography.html" />
+    <Content Include="guides\w3layouts-License.txt" />
+    <Content Include="guide\css\attrac.css" />
+    <Content Include="guide\asd\01-Zhuhai.png" />
+    <Content Include="guide\asd\6179593-profile-pics.jpg.png" />
+    <Content Include="guide\asd\778760.jpg" />
+    <Content Include="guide\asd\9032696-large.jpg" />
+    <Content Include="guide\asd\air_freight_forwarding.jpg" />
+    <Content Include="guide\asd\Cargo-Plane-1.jpg" />
+    <Content Include="guide\asd\cargo.jpg" />
+    <Content Include="guide\asd\GettyImages-814600274-714x476.jpg" />
+    <Content Include="guide\asd\img-homepage-half-section-global-logistics.jpg" />
+    <Content Include="guide\asd\jamer_hunt_profile.jpg" />
+    <Content Include="guide\asd\ocean-freight.jpg" />
+    <Content Include="guide\asd\road-freight-cargo-services-dubai-gcc.jpg" />
+    <Content Include="guide\asd\sea-freight-cargo-services-duba12.png" />
+    <Content Include="guide\asd\ship-importing-goods.jpg" />
+    <Content Include="guide\asd\ship-ocean-containers.jpg" />
+    <Content Include="guide\css\bootstrap.css" />
+    <Content Include="guide\css\flexslider.css" />
+    <Content Include="guide\css\font-awesome.css" />
+    <Content Include="guide\css\style.css" />
+    <Content Include="guide\css\swipebox.css" />
+    <Content Include="guide\fonts\fontawesome-webfont.svg" />
+    <Content Include="guide\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="guide\images\ab1.jpg" />
+    <Content Include="guide\images\arr.png" />
+    <Content Include="guide\images\c1.jpg" />
+    <Content Include="guide\images\close.png" />
+    <Content Include="guide\images\con2.jpg" />
+    <Content Include="guide\images\g1.jpg" />
+    <Content Include="guide\images\g2.jpg" />
+    <Content Include="guide\images\g3.jpg" />
+    <Content Include="guide\images\g4.jpg" />
+    <Content Include="guide\images\g5.jpg" />
+    <Content Include="guide\images\g6.jpg" />
+    <Content Include="guide\images\g7.jpg" />
+    <Content Include="guide\images\g8.jpg" />
+    <Content Include="guide\images\g9.jpg" />
+    <Content Include="guide\images\icons.svg" />
+    <Content Include="guide\images\img-sprite.png" />
+    <Content Include="guide\images\left-arrow.png" />
+    <Content Include="guide\images\right-arrow.png" />
+    <Content Include="guide\images\sssa.jpg" />
+    <Content Include="guide\images\sssa2.jpg" />
+    <Content Include="guide\images\t1.jpg" />
+    <Content Include="guide\images\t2.jpg" />
+    <Content Include="guide\images\t3.jpg" />
+    <Content Include="guide\images\t4.jpg" />
+    <Content Include="guide\images\test1.jpg" />
+    <Content Include="guide\images\test2.jpg" />
+    <Content Include="guide\images\test3.jpg" />
+    <Content Include="guide\index.html" />
+    <Content Include="guide\js\bootstrap.js" />
+    <Content Include="guide\js\easing.js" />
+    <Content Include="guide\js\jquery-2.2.3.min.js" />
+    <Content Include="guide\js\jquery.flexslider.js" />
+    <Content Include="guide\js\jquery.swipebox.min.js" />
+    <Content Include="guide\js\move-top.js" />
+    <Content Include="guide\js\responsiveslides.min.js" />
+    <Content Include="guide\js\SmoothScroll.min.js" />
+    <Content Include="guide\w3layouts-License.txt" />
+    <Content Include="Models\MyModel1.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>MyModel1.edmx</DependentUpon>
+      <LastGenOutput>MyModel1.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\MyModel1.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>MyModel1.edmx</DependentUpon>
+      <LastGenOutput>MyModel1.cs</LastGenOutput>
+    </Content>
+    <Content Include="Scripts\bootstrap.bundle.js" />
+    <Content Include="Scripts\bootstrap.bundle.min.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\esm\popper-utils.js" />
+    <Content Include="Scripts\esm\popper-utils.min.js" />
+    <Content Include="Scripts\esm\popper.js" />
+    <Content Include="Scripts\esm\popper.min.js" />
+    <Content Include="Scripts\esm\popper.min.js.map" />
+    <Content Include="Scripts\esm\popper.js.map" />
+    <Content Include="Scripts\esm\popper-utils.min.js.map" />
+    <Content Include="Scripts\esm\popper-utils.js.map" />
+    <Content Include="Scripts\bootstrap.min.js.map" />
+    <Content Include="Scripts\bootstrap.js.map" />
+    <Content Include="Scripts\bootstrap.bundle.min.js.map" />
+    <Content Include="Scripts\bootstrap.bundle.js.map" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap-reboot.min.css.map" />
+    <Content Include="Content\bootstrap-reboot.css.map" />
+    <Content Include="Content\bootstrap-grid.min.css.map" />
+    <Content Include="Content\bootstrap-grid.css.map" />
+    <Content Include="Table_Highlight_Vertical_Horizontal\css\main.css" />
+    <Content Include="Table_Highlight_Vertical_Horizontal\css\util.css" />
+    <Content Include="Table_Highlight_Vertical_Horizontal\fonts\font-awesome-4.7.0\css\font-awesome.css" />
+    <Content Include="Table_Highlight_Vertical_Horizontal\fonts\font-awesome-4.7.0\css\font-awesome.min.css" />
+    <Content Include="Table_Highlight_Vertical_Horizontal\fonts\font-awesome-4.7.0\fonts\fontawesome-webfont.svg" />
+    <Content Include="Table_Highlight_Vertical_Horizontal\fonts\font-awesome-4.7.0\HELP-US-OUT.txt" />
+    <Content Include="Table_Highlight_Vertical_Horizontal\fonts\montserrat\OFL.txt" />
+    <Content Include="Table_Highlight_Vertical_Horizontal\images\icons\favicon.ico" />
+    <Content Include="Table_Highlight_Vertical_Horizontal\index.html" />
+    <Content Include="Table_Highlight_Vertical_Horizontal\js\main.js" />
+    <Content Include="Table_Highlight_Vertical_Horizontal\vendor\animate\animate.css" />
+    <Content Include="Table_Highlight_Vertical_Horizontal\vendor\bootstrap\css\bootstrap-grid.css" />
+    <Content Include="Table_Highlight_Vertical_Horizontal\vendor\bootstrap\css\bootstrap-grid.min.css" />
+    <Content Include="Table_Highlight_Vertical_Horizontal\vendor\bootstrap\css\bootstrap-reboot.css" />
+    <Content Include="Table_Highlight_Vertical_Horizontal\vendor\bootstrap\css\bootstrap-reboot.min.css" />
+    <Content Include="Table_Highlight_Vertical_Horizontal\vendor\bootstrap\css\bootstrap.css" />
+    <Content Include="Table_Highlight_Vertical_Horizontal\vendor\bootstrap\css\bootstrap.min.css" />
+    <Content Include="Table_Highlight_Vertical_Horizontal\vendor\bootstrap\js\bootstrap.js" />
+    <Content Include="Table_Highlight_Vertical_Horizontal\vendor\bootstrap\js\bootstrap.min.js" />
+    <Content Include="Table_Highlight_Vertical_Horizontal\vendor\bootstrap\js\popper.js" />
+    <Content Include="Table_Highlight_Vertical_Horizontal\vendor\bootstrap\js\popper.min.js" />
+    <Content Include="Table_Highlight_Vertical_Horizontal\vendor\bootstrap\js\tooltip.js" />
+    <Content Include="Table_Highlight_Vertical_Horizontal\vendor\jquery\jquery-3.2.1.min.js" />
+    <Content Include="Table_Highlight_Vertical_Horizontal\vendor\perfect-scrollbar\perfect-scrollbar.css" />
+    <Content Include="Table_Highlight_Vertical_Horizontal\vendor\perfect-scrollbar\perfect-scrollbar.min.js" />
+    <Content Include="Table_Highlight_Vertical_Horizontal\vendor\select2\select2.css" />
+    <Content Include="Table_Highlight_Vertical_Horizontal\vendor\select2\select2.js" />
+    <Content Include="Table_Highlight_Vertical_Horizontal\vendor\select2\select2.min.css" />
+    <Content Include="Table_Highlight_Vertical_Horizontal\vendor\select2\select2.min.js" />
+    <Content Include="web\about.html" />
+    <Content Include="web\codes.html" />
+    <Content Include="web\contact.html" />
+    <Content Include="web\css\bootstrap.css" />
+    <Content Include="web\css\flexslider.css" />
+    <Content Include="web\css\font-awesome.min.css" />
+    <Content Include="web\css\lightbox.css" />
+    <Content Include="web\css\style.css" />
+    <Content Include="web\design\css\bootstrap.css" />
+    <Content Include="web\design\css\flexslider.css" />
+    <Content Include="web\design\css\font-awesome.min.css" />
+    <Content Include="web\design\css\lightbox.css" />
+    <Content Include="web\design\css\style.css" />
+    <Content Include="web\design\fonts\fontawesome-webfont.svg" />
+    <Content Include="web\design\images\a2.jpg" />
+    <Content Include="web\design\images\a3.jpg" />
+    <Content Include="web\design\images\a4.jpg" />
+    <Content Include="web\design\images\ain1.jpg" />
+    <Content Include="web\design\images\arrow.png" />
+    <Content Include="web\design\images\b1.jpg" />
+    <Content Include="web\design\images\b2.jpg" />
+    <Content Include="web\design\images\b3.jpg" />
+    <Content Include="web\design\images\bb1.jpg" />
+    <Content Include="web\design\images\bb2.jpg" />
+    <Content Include="web\design\images\close.png" />
+    <Content Include="web\design\images\g1.jpg" />
+    <Content Include="web\design\images\g2.jpg" />
+    <Content Include="web\design\images\g3.jpg" />
+    <Content Include="web\design\images\g4.jpg" />
+    <Content Include="web\design\images\g5.jpg" />
+    <Content Include="web\design\images\g6.jpg" />
+    <Content Include="web\design\images\g7.jpg" />
+    <Content Include="web\design\images\g8.jpg" />
+    <Content Include="web\design\images\g9.jpg" />
+    <Content Include="web\design\images\left-arrow.png" />
+    <Content Include="web\design\images\logo1.jpg" />
+    <Content Include="web\design\images\logo2.jpg" />
+    <Content Include="web\design\images\logo3.jpg" />
+    <Content Include="web\design\images\next.png" />
+    <Content Include="web\design\images\prev.png" />
+    <Content Include="web\design\images\right-arrow.png" />
+    <Content Include="web\design\images\s1.jpg" />
+    <Content Include="web\design\images\t1.jpg" />
+    <Content Include="web\design\images\t2.jpg" />
+    <Content Include="web\design\images\t3.jpg" />
+    <Content Include="web\design\js\bootstrap.js" />
+    <Content Include="web\design\js\easing.js" />
+    <Content Include="web\design\js\jquery-2.2.3.min.js" />
+    <Content Include="web\design\js\jquery.countup.js" />
+    <Content Include="web\design\js\jquery.flexslider.js" />
+    <Content Include="web\design\js\jquery.waypoints.min.js" />
+    <Content Include="web\design\js\lightbox-plus-jquery.min.js" />
+    <Content Include="web\design\js\move-top.js" />
+    <Content Include="web\design\js\responsiveslides.min.js" />
+    <Content Include="web\fonts\fontawesome-webfont.svg" />
+    <Content Include="web\gallery.html" />
+    <Content Include="web\icons.html" />
+    <Content Include="web\images\a2.jpg" />
+    <Content Include="web\images\a3.jpg" />
+    <Content Include="web\images\a4.jpg" />
+    <Content Include="web\images\ain1.jpg" />
+    <Content Include="web\images\arrow.png" />
+    <Content Include="web\images\b1.jpg" />
+    <Content Include="web\images\b2.jpg" />
+    <Content Include="web\images\b3.jpg" />
+    <Content Include="web\images\bb1.jpg" />
+    <Content Include="web\images\bb2.jpg" />
+    <Content Include="web\images\close.png" />
+    <Content Include="web\images\g1.jpg" />
+    <Content Include="web\images\g2.jpg" />
+    <Content Include="web\images\g3.jpg" />
+    <Content Include="web\images\g4.jpg" />
+    <Content Include="web\images\g5.jpg" />
+    <Content Include="web\images\g6.jpg" />
+    <Content Include="web\images\g7.jpg" />
+    <Content Include="web\images\g8.jpg" />
+    <Content Include="web\images\g9.jpg" />
+    <Content Include="web\images\left-arrow.png" />
+    <Content Include="web\images\logo1.jpg" />
+    <Content Include="web\images\logo2.jpg" />
+    <Content Include="web\images\logo3.jpg" />
+    <Content Include="web\images\next.png" />
+    <Content Include="web\images\prev.png" />
+    <Content Include="web\images\right-arrow.png" />
+    <Content Include="web\images\s1.jpg" />
+    <Content Include="web\images\t1.jpg" />
+    <Content Include="web\images\t2.jpg" />
+    <Content Include="web\images\t3.jpg" />
+    <Content Include="web\index.html" />
+    <Content Include="web\js\bootstrap.js" />
+    <Content Include="web\js\easing.js" />
+    <Content Include="web\js\jquery-2.2.3.min.js" />
+    <Content Include="web\js\jquery.countup.js" />
+    <Content Include="web\js\jquery.flexslider.js" />
+    <Content Include="web\js\jquery.waypoints.min.js" />
+    <Content Include="web\js\lightbox-plus-jquery.min.js" />
+    <Content Include="web\js\move-top.js" />
+    <Content Include="web\js\responsiveslides.min.js" />
+    <Content Include="web\services.html" />
+    <Content Include="web\w3layouts-License.txt" />
+    <EntityDeploy Include="Models\MyModel1.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>MyModel1.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\MyModel1.edmx.diagram">
+      <DependentUpon>MyModel1.edmx</DependentUpon>
+    </Content>
+    <Content Include="guide\fonts\fontawesome-webfont.eot" />
+    <Content Include="guide\fonts\fontawesome-webfont.ttf" />
+    <Content Include="guide\fonts\fontawesome-webfont.woff" />
+    <Content Include="guide\fonts\fontawesome-webfont.woff2" />
+    <Content Include="guide\fonts\FontAwesome.otf" />
+    <Content Include="guide\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="guide\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="guide\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="guide\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="guide\images\Thumbs.db" />
+    <Content Include="guides\fonts\fontawesome-webfont.eot" />
+    <Content Include="guides\fonts\fontawesome-webfont.ttf" />
+    <Content Include="guides\fonts\fontawesome-webfont.woff" />
+    <Content Include="guides\fonts\fontawesome-webfont.woff2" />
+    <Content Include="guides\fonts\FontAwesome.otf" />
+    <Content Include="guides\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="guides\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="guides\images\Thumbs.db" />
+    <None Include="Properties\PublishProfiles\DDAC20180411080423 - Web Deploy.pubxml" />
+    <None Include="Properties\PublishProfiles\DDAC20180411112109 - Web Deploy.pubxml" />
+    <None Include="Properties\PublishProfiles\ddacwebapp - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\ddacwebapp - Web Deploy.pubxml" />
+    <None Include="Scripts\jquery-3.3.1.intellisense.js" />
+    <Content Include="Scripts\jquery-3.3.1.js" />
+    <Content Include="Scripts\jquery-3.3.1.min.js" />
+    <Content Include="Scripts\jquery-3.3.1.slim.js" />
+    <Content Include="Scripts\jquery-3.3.1.slim.min.js" />
+    <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
+    <Content Include="Scripts\jquery-3.3.1.min.map" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery-ui-1.12.1.js" />
+    <Content Include="Scripts\jquery-ui-1.12.1.min.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\popper-utils.js" />
+    <Content Include="Scripts\popper-utils.min.js" />
+    <Content Include="Scripts\popper.js" />
+    <Content Include="Scripts\popper.min.js" />
+    <Content Include="Scripts\umd\popper-utils.js" />
+    <Content Include="Scripts\umd\popper-utils.min.js" />
+    <Content Include="Scripts\umd\popper.js" />
+    <Content Include="Scripts\umd\popper.min.js" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Views\User\VerifyAccount.cshtml" />
+    <Content Include="web\design\fonts\fontawesome-webfont.eot" />
+    <Content Include="web\design\fonts\fontawesome-webfont.ttf" />
+    <Content Include="web\design\fonts\fontawesome-webfont.woff" />
+    <Content Include="web\design\fonts\fontawesome-webfont.woff2" />
+    <Content Include="web\design\fonts\FontAwesome.otf" />
+    <Content Include="web\design\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="web\design\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="web\design\images\Thumbs.db" />
+    <Content Include="web\fonts\fontawesome-webfont.eot" />
+    <Content Include="web\fonts\fontawesome-webfont.ttf" />
+    <Content Include="web\fonts\fontawesome-webfont.woff" />
+    <Content Include="web\fonts\fontawesome-webfont.woff2" />
+    <Content Include="web\fonts\FontAwesome.otf" />
+    <Content Include="web\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="web\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="web\images\Thumbs.db" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\BookingController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\SchedulesController.cs" />
+    <Compile Include="Controllers\UserController.cs" />
+    <Compile Include="Controllers\VesselsController.cs" />
+    <Compile Include="Crypto.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Booking.cs">
+      <DependentUpon>MyModel1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Extended\Booking.cs" />
+    <Compile Include="Models\Extended\User.cs" />
+    <Compile Include="Models\Extended\Vessel.cs" />
+    <Compile Include="Models\MyModel1.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MyModel1.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MyModel1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MyModel1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MyModel1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MyModel1.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ResetPasswordModel.cs" />
+    <Compile Include="Models\Schedule.cs">
+      <DependentUpon>MyModel1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ScheduleBooking.cs">
+      <DependentUpon>MyModel1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\User.cs">
+      <DependentUpon>MyModel1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\UserLogin.cs" />
+    <Compile Include="Models\Vessel.cs">
+      <DependentUpon>MyModel1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\web.config" />
+    <None Include="packages.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\User\Registration.cshtml" />
+    <Content Include="Views\User\Login.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\User\ForgotPassword.cshtml" />
+    <Content Include="Views\User\ResetPassword.cshtml" />
+    <Content Include="Views\Vessels\Index.cshtml" />
+    <Content Include="Views\User\Save.cshtml" />
+    <Content Include="Views\User\Delete.cshtml" />
+    <Content Include="Scripts\umd\popper.min.js.map" />
+    <Content Include="Scripts\umd\popper.js.map" />
+    <Content Include="Scripts\umd\popper-utils.min.js.map" />
+    <Content Include="Scripts\umd\popper-utils.js.map" />
+    <Content Include="Scripts\README.md" />
+    <Content Include="Scripts\popper.min.js.map" />
+    <Content Include="Scripts\popper.js.map" />
+    <Content Include="Scripts\popper-utils.min.js.map" />
+    <Content Include="Scripts\popper-utils.js.map" />
+    <Content Include="Views\Schedules\Create.cshtml" />
+    <Content Include="Views\Schedules\Delete.cshtml" />
+    <Content Include="Views\Schedules\Details.cshtml" />
+    <Content Include="Views\Schedules\Edit.cshtml" />
+    <Content Include="Views\Schedules\Index.cshtml" />
+    <Content Include="Views\Booking\Booking.cshtml" />
+    <Content Include="Views\Booking\Book.cshtml" />
+    <Content Include="Views\View.cshtml" />
+    <Content Include="Views\Booking\Index.cshtml" />
+    <Content Include="Views\Schedules\Selection.cshtml" />
+    <Content Include="Views\Schedules\Index2.cshtml" />
+    <Content Include="Views\Schedules\Selection2.cshtml" />
+    <Content Include="Table_Highlight_Vertical_Horizontal\fonts\font-awesome-4.7.0\fonts\fontawesome-webfont.eot" />
+    <Content Include="Table_Highlight_Vertical_Horizontal\fonts\font-awesome-4.7.0\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Table_Highlight_Vertical_Horizontal\fonts\font-awesome-4.7.0\fonts\fontawesome-webfont.woff" />
+    <Content Include="Table_Highlight_Vertical_Horizontal\fonts\font-awesome-4.7.0\fonts\fontawesome-webfont.woff2" />
+    <Content Include="Table_Highlight_Vertical_Horizontal\fonts\font-awesome-4.7.0\fonts\FontAwesome.otf" />
+    <Content Include="Table_Highlight_Vertical_Horizontal\fonts\font-awesome-4.7.0\less\animated.less" />
+    <Content Include="Table_Highlight_Vertical_Horizontal\fonts\font-awesome-4.7.0\less\bordered-pulled.less" />
+    <Content Include="Table_Highlight_Vertical_Horizontal\fonts\font-awesome-4.7.0\less\core.less" />
+    <Content Include="Table_Highlight_Vertical_Horizontal\fonts\font-awesome-4.7.0\less\fixed-width.less" />
+    <Content Include="Table_Highlight_Vertical_Horizontal\fonts\font-awesome-4.7.0\less\font-awesome.less" />
+    <Content Include="Table_Highlight_Vertical_Horizontal\fonts\font-awesome-4.7.0\less\icons.less" />
+    <Content Include="Table_Highlight_Vertical_Horizontal\fonts\font-awesome-4.7.0\less\larger.less" />
+    <Content Include="Table_Highlight_Vertical_Horizontal\fonts\font-awesome-4.7.0\less\list.less" />
+    <Content Include="Table_Highlight_Vertical_Horizontal\fonts\font-awesome-4.7.0\less\mixins.less" />
+    <Content Include="Table_Highlight_Vertical_Horizontal\fonts\font-awesome-4.7.0\less\path.less" />
+    <Content Include="Table_Highlight_Vertical_Horizontal\fonts\font-awesome-4.7.0\less\rotated-flipped.less" />
+    <Content Include="Table_Highlight_Vertical_Horizontal\fonts\font-awesome-4.7.0\less\screen-reader.less" />
+    <Content Include="Table_Highlight_Vertical_Horizontal\fonts\font-awesome-4.7.0\less\stacked.less" />
+    <Content Include="Table_Highlight_Vertical_Horizontal\fonts\font-awesome-4.7.0\less\variables.less" />
+    <Content Include="Table_Highlight_Vertical_Horizontal\fonts\font-awesome-4.7.0\scss\font-awesome.scss" />
+    <Content Include="Table_Highlight_Vertical_Horizontal\fonts\font-awesome-4.7.0\scss\_animated.scss" />
+    <Content Include="Table_Highlight_Vertical_Horizontal\fonts\font-awesome-4.7.0\scss\_bordered-pulled.scss" />
+    <Content Include="Table_Highlight_Vertical_Horizontal\fonts\font-awesome-4.7.0\scss\_core.scss" />
+    <Content Include="Table_Highlight_Vertical_Horizontal\fonts\font-awesome-4.7.0\scss\_fixed-width.scss" />
+    <Content Include="Table_Highlight_Vertical_Horizontal\fonts\font-awesome-4.7.0\scss\_icons.scss" />
+    <Content Include="Table_Highlight_Vertical_Horizontal\fonts\font-awesome-4.7.0\scss\_larger.scss" />
+    <Content Include="Table_Highlight_Vertical_Horizontal\fonts\font-awesome-4.7.0\scss\_list.scss" />
+    <Content Include="Table_Highlight_Vertical_Horizontal\fonts\font-awesome-4.7.0\scss\_mixins.scss" />
+    <Content Include="Table_Highlight_Vertical_Horizontal\fonts\font-awesome-4.7.0\scss\_path.scss" />
+    <Content Include="Table_Highlight_Vertical_Horizontal\fonts\font-awesome-4.7.0\scss\_rotated-flipped.scss" />
+    <Content Include="Table_Highlight_Vertical_Horizontal\fonts\font-awesome-4.7.0\scss\_screen-reader.scss" />
+    <Content Include="Table_Highlight_Vertical_Horizontal\fonts\font-awesome-4.7.0\scss\_stacked.scss" />
+    <Content Include="Table_Highlight_Vertical_Horizontal\fonts\font-awesome-4.7.0\scss\_variables.scss" />
+    <Content Include="Table_Highlight_Vertical_Horizontal\fonts\montserrat\Montserrat-Black.ttf" />
+    <Content Include="Table_Highlight_Vertical_Horizontal\fonts\montserrat\Montserrat-BlackItalic.ttf" />
+    <Content Include="Table_Highlight_Vertical_Horizontal\fonts\montserrat\Montserrat-Bold.ttf" />
+    <Content Include="Table_Highlight_Vertical_Horizontal\fonts\montserrat\Montserrat-BoldItalic.ttf" />
+    <Content Include="Table_Highlight_Vertical_Horizontal\fonts\montserrat\Montserrat-ExtraBold.ttf" />
+    <Content Include="Table_Highlight_Vertical_Horizontal\fonts\montserrat\Montserrat-ExtraBoldItalic.ttf" />
+    <Content Include="Table_Highlight_Vertical_Horizontal\fonts\montserrat\Montserrat-ExtraLight.ttf" />
+    <Content Include="Table_Highlight_Vertical_Horizontal\fonts\montserrat\Montserrat-ExtraLightItalic.ttf" />
+    <Content Include="Table_Highlight_Vertical_Horizontal\fonts\montserrat\Montserrat-Italic.ttf" />
+    <Content Include="Table_Highlight_Vertical_Horizontal\fonts\montserrat\Montserrat-Light.ttf" />
+    <Content Include="Table_Highlight_Vertical_Horizontal\fonts\montserrat\Montserrat-LightItalic.ttf" />
+    <Content Include="Table_Highlight_Vertical_Horizontal\fonts\montserrat\Montserrat-Medium.ttf" />
+    <Content Include="Table_Highlight_Vertical_Horizontal\fonts\montserrat\Montserrat-MediumItalic.ttf" />
+    <Content Include="Table_Highlight_Vertical_Horizontal\fonts\montserrat\Montserrat-Regular.ttf" />
+    <Content Include="Table_Highlight_Vertical_Horizontal\fonts\montserrat\Montserrat-SemiBold.ttf" />
+    <Content Include="Table_Highlight_Vertical_Horizontal\fonts\montserrat\Montserrat-SemiBoldItalic.ttf" />
+    <Content Include="Table_Highlight_Vertical_Horizontal\fonts\montserrat\Montserrat-Thin.ttf" />
+    <Content Include="Table_Highlight_Vertical_Horizontal\fonts\montserrat\Montserrat-ThinItalic.ttf" />
+    <Content Include="Table_Highlight_Vertical_Horizontal\fonts\OpenSans\OpenSans-Bold.ttf" />
+    <Content Include="Table_Highlight_Vertical_Horizontal\fonts\OpenSans\OpenSans-BoldItalic.ttf" />
+    <Content Include="Table_Highlight_Vertical_Horizontal\fonts\OpenSans\OpenSans-ExtraBold.ttf" />
+    <Content Include="Table_Highlight_Vertical_Horizontal\fonts\OpenSans\OpenSans-ExtraBoldItalic.ttf" />
+    <Content Include="Table_Highlight_Vertical_Horizontal\fonts\OpenSans\OpenSans-Italic.ttf" />
+    <Content Include="Table_Highlight_Vertical_Horizontal\fonts\OpenSans\OpenSans-Light.ttf" />
+    <Content Include="Table_Highlight_Vertical_Horizontal\fonts\OpenSans\OpenSans-LightItalic.ttf" />
+    <Content Include="Table_Highlight_Vertical_Horizontal\fonts\OpenSans\OpenSans-Regular.otf" />
+    <Content Include="Table_Highlight_Vertical_Horizontal\fonts\OpenSans\OpenSans-Regular.ttf" />
+    <Content Include="Table_Highlight_Vertical_Horizontal\fonts\OpenSans\OpenSans-SemiBold.ttf" />
+    <Content Include="Table_Highlight_Vertical_Horizontal\fonts\OpenSans\OpenSans-SemiBoldItalic.ttf" />
+    <Content Include="Table_Highlight_Vertical_Horizontal\vendor\bootstrap\css\bootstrap-grid.css.map" />
+    <Content Include="Table_Highlight_Vertical_Horizontal\vendor\bootstrap\css\bootstrap-grid.min.css.map" />
+    <Content Include="Table_Highlight_Vertical_Horizontal\vendor\bootstrap\css\bootstrap-reboot.css.map" />
+    <Content Include="Table_Highlight_Vertical_Horizontal\vendor\bootstrap\css\bootstrap-reboot.min.css.map" />
+    <Content Include="Table_Highlight_Vertical_Horizontal\vendor\bootstrap\css\bootstrap.css.map" />
+    <Content Include="Table_Highlight_Vertical_Horizontal\vendor\bootstrap\css\bootstrap.min.css.map" />
+    <Content Include="Views\User\Details.cshtml" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <TypeScriptCompile Include="Scripts\index.d.ts" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup />
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets')" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>52491</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:52491/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.2.1.0\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.2.1.0\build\Microsoft.Net.Compilers.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.7\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.7\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

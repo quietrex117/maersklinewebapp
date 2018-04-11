@@ -1,0 +1,116 @@
+﻿@model DDAC.Models.ScheduleBooking
+
+
+<!DOCTYPE html>
+<html lang="zxx">
+<head>
+	<title>Maersk Line - Booking</title>
+	<!-- custom-theme -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	
+	<script type="application/x-javascript">
+		addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
+			   function hideURLbar(){ window.scrollTo(0,1); } </script>
+	<!-- //custom-theme -->
+	<link href="~/guide/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+	<link href="~/guides/css/style.css" rel="stylesheet" type="text/css" media="all" />
+	<!-- font-awesome-icons -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+	<link rel="stylesheet" href="https://cdn.datatables.net/1.10.13/css/jquery.dataTables.min.css" />
+
+	<!-- Latest compiled and minified CSS -->
+
+	<link href="~/guides/css/style.css" rel="stylesheet" type="text/css" media="all">
+
+	<link href="~/guides/css/font-awesome.css" rel="stylesheet">
+	<!-- //font-awesome-icons -->
+	<link href="//fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
+	<link href='//fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
+</head>
+<body>
+	<!-- header -->
+	
+	<!-- //header -->
+	<!-- banner -->
+	<!-- //banner -->
+	<!--/contact-->
+	<div class="contact-w3ls">
+		<div class="container">
+			<div class="agileits_heading_section">
+				<h3 class="wthree_head">Booking</h3>
+				<p class="w3l_sub_para_agile">Give me a message</p>
+			</div>
+			
+		</div>
+	</div>
+
+	<!-- footer -->
+
+	<!-- //footer -->
+
+	<a href="#" id="toTop" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
+
+	<!-- js -->
+	<script src="~/guides/js/jquery-2.1.4.min.js"></script>
+	<script src="~/guides/js/jarallax.js"></script>
+	<script src="~/guides/js/SmoothScroll.min.js"></script>
+	<script type="text/javascript">
+		/* init Jarallax */
+		$('.jarallax').jarallax({
+			speed: 0.5,
+			imgWidth: 1366,
+			imgHeight: 768
+		})
+	</script>
+
+	<!-- start-smoth-scrolling -->
+	<script src="~/guides/js/jqBootstrapValidation.js"></script>
+	<script src="~/guides/js/contact_me.js"></script>
+	<!-- //for bootstrap working -->
+	<!-- start-smooth-scrolling -->
+	<script type="text/javascript" src="js/move-top.js"></script>
+	<script type="text/javascript" src="js/easing.js"></script>
+	<script type="text/javascript">
+		jQuery(document).ready(function ($) {
+			$(".scroll").click(function (event) {
+				event.preventDefault();
+				$('html,body').animate({ scrollTop: $(this.hash).offset().top }, 1000);
+			});
+		});
+	</script>
+	<!-- start-smooth-scrolling -->
+	<link rel="stylesheet" href="~/guide/css/swipebox.css">
+	<script src="~/guide/js/jquery.swipebox.min.js"></script>
+	<script type="text/javascript">
+		jQuery(function ($) {
+			$(".swipebox").swipebox();
+		});
+	</script>
+
+	<!-- here stars scrolling icon -->
+	<script type="text/javascript">
+		$(document).ready(function () {
+			/*
+				var defaults = {
+				containerID: 'toTop', // fading element id
+				containerHoverID: 'toTopHover', // fading element hover id
+				scrollSpeed: 1200,
+				easingType: 'linear'
+				};
+			*/
+
+			$().UItoTop({ easingType: 'easeOutQuart' });
+
+		});
+	</script>
+	<!-- //here ends scrolling icon -->
+
+	<script type="text/javascript" src="~/guides/js/bootstrap-3.1.1.min.js"></script>
+
+	@section Scripts{
+		<script src="~/Scripts/jquery.validate.min.js"></script>
+		<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+	}
+</body>
+</html>
