@@ -121,8 +121,9 @@ namespace DDAC.Controllers
             
             scheduleBooking.ScheduleId = v.ScheduleId;
             scheduleBooking.UsersId = vb.UsersId;
-            scheduleBooking.Cargo = v.ToLocation;
-            scheduleBooking.ContainerType = v.FromLocation;
+            
+            //scheduleBooking.Cargo = v.ToLocation;
+            //scheduleBooking.ContainerType = v.FromLocation;
 
             return View(scheduleBooking);
         }

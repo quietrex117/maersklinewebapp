@@ -1,0 +1,58 @@
+﻿@model DDAC.Models.ScheduleBooking
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Details</title>
+</head>
+<body>
+    <div>
+        <h4>ScheduleBooking</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.Cargo)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Cargo)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.ContainerType)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.ContainerType)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Schedule.FromLocation)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Schedule.FromLocation)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.User.Username)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.User.Username)
+            </dd>
+    
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.BookingId }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+</body>
+</html>

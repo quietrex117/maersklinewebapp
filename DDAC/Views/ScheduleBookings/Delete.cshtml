@@ -1,0 +1,61 @@
+﻿@model DDAC.Models.ScheduleBooking
+
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Delete</title>
+</head>
+<body>
+    <h3>Are you sure you want to delete this?</h3>
+    <div>
+        <h4>ScheduleBooking</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.Schedule.EarliestDeparture)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.User.Address)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.ContainerType)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Schedule.EarliestDeparture)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Schedule.FromLocation)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Schedule.FromLocation)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.User.Username)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.User.Username)
+            </dd>
+    
+        </dl>
+    
+        @using (Html.BeginForm()) {
+            @Html.AntiForgeryToken()
+    
+            <div class="form-actions no-color">
+                <input type="submit" value="Delete" class="btn btn-default" /> |
+                @Html.ActionLink("Back to List", "Index")
+            </div>
+        }
+    </div>
+</body>
+</html>

@@ -22,7 +22,7 @@ namespace DDAC.Models
         }
     
         public int ScheduleId { get; set; }
-        
+
         [DataType(DataType.Date)]
         public Nullable<System.DateTime> ShipmentDate { get; set; }
         public string FromLocation { get; set; }

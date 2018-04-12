@@ -182,27 +182,11 @@ namespace DDAC.Controllers
 
             string subject = "";
             string body = "";
-            string bodys = "";
 
             if(emailFor == "VerifyAccount")
             {
                 subject = "Your account is successfully created!";
-
-                bodys = "<br/>Your registration request has been forwarded to the administrator for approval" +
-                    "<br/>" +
-                    "You will be informed by email when your request has been approved." +
-                    "<br/>If you have general questions about Maersk Line, please go to http://www.maerskline.com" +
-                    "<br/>" +
-                    "Office Name: Marsek Sdn Bhd" +
-                    "Office City: KL" +
-                    "Phone: 60312384323" +
-                    "<br/>" +
-                    "Thank you for using Maersk Line online services" +
-                    "<br/>" +
-                    "Yours sincerly," +
-                    "Maresk Line" +
-                    "<br/>" +
-                    "Please do not reply to this email, as we are unable to respond from this email address.";
+                
                 body = "<br/></br>We are excited to tell you that your Maersk Line account is" +
                         " successfully created.  Please proceed verify your account by clicking link below" +
                         "<br/><br/><a href='" + link + "'>" + link + "</a> <br/><br/>" +
