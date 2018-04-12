@@ -17,7 +17,7 @@ namespace DDAC.Controllers
         // GET: ScheduleBookings
         public ActionResult Index()
         {
-           
+        
             var scheduleBookings = db.ScheduleBookings.Include(s => s.Schedule).Include(s => s.User);
             var vb = db.Users.Where(a => a.Email == HttpContext.User.Identity.Name).FirstOrDefault();
 
