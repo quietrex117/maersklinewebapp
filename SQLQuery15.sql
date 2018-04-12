@@ -1,1 +1,0 @@
-﻿INSERT INTO Users (UsersId,Username,Password,Email,Address,PhoneNumber,IsEmailVerified,Ac
