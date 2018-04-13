@@ -437,6 +437,7 @@
     <Content Include="guides\fonts\glyphicons-halflings-regular.woff" />
     <Content Include="guides\fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="guides\images\Thumbs.db" />
+    <Content Include="DDAC-AssignmentTP034717.docx" />
     <None Include="Properties\PublishProfiles\DDAC20180411080423 - Web Deploy.pubxml" />
     <None Include="Properties\PublishProfiles\DDAC20180411112109 - Web Deploy.pubxml" />
     <None Include="Properties\PublishProfiles\ddacwebapp - FTP.pubxml" />
